@@ -230,6 +230,7 @@ def main():
         ext_modules=get_ext_modules(PACKAGE_DATA["name"]),
         packages=find_packages(),
         cmdclass={"build": build},
+        package_data={'': [PACKAGE_DATA["name"]+'/data']},
         **PACKAGE_DATA,
     )
 
