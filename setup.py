@@ -1,6 +1,5 @@
 import os
 import itertools
-import fnmatch
 from subprocess import Popen, PIPE
 from setuptools import setup, Extension, find_packages
 from distutils.command.build import build as build_orig
@@ -41,11 +40,16 @@ class CannotRunCommandError(SetupError):
 
 
 # Helper functions
-def call_prog(prog, args):
+def call_prog(prog, args, encoding=None, strip=False):
     """Call an executable and return its standard output
     Args:
         prog: (str) - the executable's name
         args: (list of str) - arguments for the executable
+        encoding: (str, optional, default: None) - chose an encoding to convert the
+            output of called programs to Python strings, uses the system-default
+            encoding by default
+        strip: (bool, optional, default: False) - whether to strip newlines and spaces
+            from the end of the returned string
 
     Returns:
         The standard output of the executable called with the given arguments.
@@ -65,47 +69,121 @@ def call_prog(prog, args):
             "Error running '{} {}', error: {}".format(prog, " ".join(args), err)
         )
     else:
+        if encoding is not None:
+            output = output.decode(encoding=encoding)
+        else:
+            output = output.decode()
+        if strip:
+            output = output.rstrip()
         return output
 
 
-def get_sys_lib_dirs():
-    """Obtain system library dirs depending on the architecture.
+def get_lib_dirs(kind):
+    """Obtain library dirs depending on the architecture.
+
+    Supports determining system library dirs (kind="system") and conda library dirs
+    (kind="conda").
 
     This may not be necessary depending on the compiler used. If the program "uname" is
     not installed, the system's architecture cannot be determined and a standard set of
     directories is returned.
 
+    Args:
+        kind: (string) - the kind of library paths you want
+
     Returns:
-        A list of strings containing the paths of the system libraries.
+        A list of strings containing the library paths of the specified type.
     """
-    dirs = ["/usr/lib/"]
-    try:
-        arch = call_prog(UNAME, ["-m"])
-    except CommandNotFoundError:
-        arch = None
-    if arch is not None:
-        dirs.append("/usr/lib/{}-linux-gnu/".format(arch))
+    if kind == "system":
+        dirs = ["/usr/lib/"]
+        try:
+            arch = call_prog(UNAME, ["-m"], strip=True)
+        except CommandNotFoundError:
+            arch = None
+        if arch is not None:
+            dirs.append("/usr/lib/{}-linux-gnu/".format(arch))
+    elif kind == "conda":
+        dirs = []
+        prefix = get_conda_prefix()
+        if prefix is not None:
+            dirs.append(os.path.join(prefix, "lib"))
+    else:
+        raise ValueError("Unknown kind '{}'".format(kind))
     return dirs
 
 
-def get_sys_include_dirs():
-    """Obtain system include dirs depending on the architecture.
+def get_include_dirs(kind):
+    """Obtain include dirs depending on the architecture.
+
+    Supports determining system include dirs (kind="system") and conda include dirs
+    (kind="conda").
 
     This may not be necessary depending on the compiler used. If the program "uname" is
     not installed, the system's architecture cannot be determined and a standard set of
     directories is returned.
 
+    Args:
+        kind: (string) - the kind of include paths you want
+
     Returns:
-        A list of strings containing the system include paths.
+        A list of strings containing the include paths of the specified type.
     """
-    dirs = ["/usr/include/"]
-    try:
-        arch = call_prog(UNAME, ["-m"])
-    except CommandNotFoundError:
-        arch = None
-    if arch is not None:
-        dirs.append("/usr/include/{}-linux-gnu/".format(arch))
+    if kind == "system":
+        dirs = ["/usr/include/"]
+        try:
+            arch = call_prog(UNAME, ["-m"], strip=True)
+        except CommandNotFoundError:
+            arch = None
+        if arch is not None:
+            dirs.append("/usr/include/{}-linux-gnu/".format(arch))
+    elif kind == "conda":
+        dirs = []
+        prefix = get_conda_prefix()
+        if prefix is not None:
+            dirs.append(os.path.join(prefix, "include"))
+    else:
+        raise ValueError("Unknown kind '{}'".format(kind))
     return dirs
+
+
+def get_eigen_include_dir():
+    """Try to find the eigen include directory.
+
+    Search all directories in the system and conda include paths for a directory called
+    "eigen3". Stop at the first one found and return its path.
+
+    Returns:
+        A path to the eigen3 include directory if found, None otherwise
+    """
+    # Allow explicitly setting the eigent include directory
+    eigen_dir = os.environ.get("MAINST_EIGEN3_DIR", None)
+    if eigen_dir is not None:
+        return eigen_dir
+
+    # Unless otherwise specified, prefer the conda installation of eigen3. If not found,
+    # search the system paths.
+    if os.environ.get("MAINST_EIGEN3_PREFER_SYSTEM", "0") == "1":
+        kinds = ("system", "conda")
+    else:
+        kinds = ("conda", "system")
+    for kind in kinds:
+        for d in get_include_dirs(kind):
+            content = os.listdir(d)
+            for c in content:
+                if c == "eigen3" and os.path.isdir(d):
+                    return os.path.join(d, c)
+    
+    return None
+
+
+def get_conda_prefix():
+    """Determine whether a conda environment is active and return its path
+    
+    Returns:
+        The path if a conda env is active and None otherwise.
+    """
+    path = os.environ.get("CONDA_PREFIX", None)
+    return path
 
 
 class build(build_orig):
@@ -143,11 +221,12 @@ def is_file_type(file, type):
         ValueError if the type of file is not known
     """
     if type == "source":
-        matches = fnmatch.fnmatch(file, "*.cpp") or fnmatch.fnmatch(file, "*.c")
+        matches = file.endswith(".cpp") or file.endswith(".c")
     elif type == "header":
-        matches = fnmatch.fnmatch(file, "*.hpp") or fnmatch.fnmatch(file, "*.h")
+        matches = file.endswith(".hpp") or file.endswith(".h")
     else:
         raise ValueError("Unsupported file type '{}'".format(type))
+    return matches
 
 
 def get_files_in_dir(dir):
@@ -185,7 +264,7 @@ def get_ext_modules(basename):
     # files += get_files_in_dir(os.path.join(os.path.curdir, "include"))
     # headers = [f for f in files if is_file_type(f, "header")]
 
-    libraries = ["pthread"]
+    libraries = ["pthread", "c", "dl", "m", "xml2"]
     extra_compile_args = [
         "-std=c++14",
         "-v",
@@ -197,12 +276,20 @@ def get_ext_modules(basename):
     ]
     swig_opts = ["-c++", "-Iinclude"]
 
+    include_dirs = get_include_dirs("system") + get_include_dirs("conda")
+    eigen_include = get_eigen_include_dir()
+    if eigen_include is not None:
+        include_dirs.append(eigen_include)
+    include_dirs.append("include")
+
+    library_dirs = get_lib_dirs("system") + get_lib_dirs("conda")
+
     # Create the main C++ extension with either min or max funtionality
     maagbel_cpp_ext = Extension(
         basename + "._cpp",
         sources=sources,
-        include_dirs=get_sys_include_dirs() + ["include"],
-        library_dirs=get_sys_lib_dirs(),
+        include_dirs=include_dirs,
+        library_dirs=library_dirs,
         libraries=libraries,
         language="c++",
         swig_opts=swig_opts,
