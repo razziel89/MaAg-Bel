@@ -6,6 +6,20 @@ Aggregates](https://github.com/razziel89/ManipulateAggregates). It is meant to b
 only as a Python package. Its functionality is reduced to that needed by Manipulate
 Aggregates.
 
+## Notable changes
+
+Most notable changes with respect to the Open Babel base are:
+
+* one library containing all the functionality instead of multiple ones
+* standalone ops removed
+* eigen3 added as a hard dependency
+* XML and ZLIB functionality removed
+* inchi, smiles and cml formats removed (the latter 2 depend on inchi to some degree)
+* more formats removed:
+  * JOSN-based
+  * XML-based
+* Windows compatibility removed (use the WSL is you need to use Windows)
+
 ## More information regarding Open Babel
 
 Open Babel is a chemical toolbox designed to speak the many languages

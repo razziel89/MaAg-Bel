@@ -264,7 +264,7 @@ def get_ext_modules(basename):
     # files += get_files_in_dir(os.path.join(os.path.curdir, "include"))
     # headers = [f for f in files if is_file_type(f, "header")]
 
-    libraries = ["pthread", "c", "dl", "m", "xml2"]
+    libraries = ["pthread", "c", "dl", "m"]
     extra_compile_args = [
         "-std=c++14",
         "-v",
