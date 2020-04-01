@@ -43,12 +43,6 @@ Altered by: Geoffrey Hutchison 2005 for Open Babel project
 
 #include <zlib.h>
 
-#ifdef WIN32 /* Window 95 & Windows NT */
-#  define OS_CODE  0x0b
-#endif
-#if defined(MACOS) || defined(TARGET_OS_MAC)
-#  define OS_CODE  0x07
-#endif
 #ifndef OS_CODE
 #  define OS_CODE  0x03  /* assume Unix */
 #endif

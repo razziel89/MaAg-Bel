@@ -5309,7 +5309,7 @@ namespace OpenBabel
     return( true );
   }
 
-  // Put the specified molecular charge on a single atom (which is expected for InChIFormat).
+  // Put the specified molecular charge on a single atom.
   // Assumes all the hydrogen is explicitly included in the molecule,
   // and that SetTotalCharge() has not been called. (This function is an alternative.)
   // Returns false if cannot assign all the charge.

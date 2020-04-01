@@ -24,10 +24,6 @@ GNU General Public License for more details.
 // private data header with default parameters
 #include "phmodeldata.h"
 
-#ifdef WIN32
-#pragma warning (disable : 4786)
-#endif
-
 using namespace std;
 
 namespace OpenBabel

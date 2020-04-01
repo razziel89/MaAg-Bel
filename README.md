@@ -16,7 +16,7 @@ chemistry, solid-state materials, biochemistry, or related areas.
 * Ready-to-use programs, and complete programmer's toolkit
 * Read, write and convert over 90 chemical file formats
 * Filter and search molecular files using SMARTS and other methods
-* Generate 2D and 3D coordinates for SMILES, InChI and other formats
+* Generate 2D and 3D coordinates for SMILES and other formats
 * Supports molecular modeling, cheminformatics, bioinformatics,
   organic chemistry, inorganic chemistry, solid-state materials,
   nuclear chemistry...

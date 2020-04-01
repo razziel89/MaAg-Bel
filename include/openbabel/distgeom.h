@@ -27,8 +27,6 @@ GNU General Public License for more details.
   #define OBAPI
 #endif
 
-#ifdef HAVE_EIGEN
-
 #include <Eigen/Core>
 
 namespace OpenBabel {
@@ -112,8 +110,6 @@ namespace OpenBabel {
 
 
 }
-
-#endif
 
 #endif
 

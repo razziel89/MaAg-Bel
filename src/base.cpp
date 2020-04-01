@@ -531,8 +531,8 @@ namespace OpenBabel
   acid. Currently used for MDL 2D files.
   - OBGridData - Store and process numeric grid data involved with orbitals or
   electrostatic potential.
-  - OBBuilder - New class to handle generation of 3D coordinates for SMILES,
-  InChI and other formats.
+  - OBBuilder - New class to handle generation of 3D coordinates for SMILES
+  and other formats.
   - OBForceField - Revised, improved class, including use of constraints.
   - OBMoleculeFormat - Installed by default, to facilitate new format development.
   - OBLocale - New class to ensure chemical data is read in the "C" numeric locale.

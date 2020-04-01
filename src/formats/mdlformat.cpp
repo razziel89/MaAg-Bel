@@ -18,10 +18,6 @@ GNU General Public License for more details.
 ***********************************************************************/
 #include <openbabel/babelconfig.h>
 
-#ifdef _WIN32
-#pragma warning (disable : 4786)
-#endif
-
 #include <ctime>
 #include <vector>
 #include <iomanip>

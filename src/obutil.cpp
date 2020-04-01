@@ -289,12 +289,6 @@ namespace OpenBabel
   //! to the default OBMessageHandler error log if it fails.
   bool SafeOpen(std::ifstream &fs, const char *filename)
   {
-#ifdef WIN32
-    string s(filename);
-    if (s.find(".bin") != string::npos)
-      fs.open(filename,ios::binary);
-    else
-#endif
 
       fs.open(filename);
 
@@ -315,12 +309,6 @@ namespace OpenBabel
   //! to the default OBMessageHandler error log if it fails.
   bool SafeOpen(std::ofstream &fs, const char *filename)
   {
-#ifdef WIN32
-    string s(filename);
-    if (s.find(".bin") != string::npos)
-      fs.open(filename,ios::binary);
-    else
-#endif
 
       fs.open(filename);
 

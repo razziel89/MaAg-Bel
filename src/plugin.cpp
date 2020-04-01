@@ -349,9 +349,6 @@ std::vector<std::string> EnableStaticPlugins()
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&thePubChemFormat)->GetID());
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theXMLFormat)->GetID());
 #endif
-#ifdef HAVE_STATIC_INCHI
-  plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theInChIFormat)->GetID());
-#endif
 #ifdef HAVE_RPC_XDR_H
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theXTCFormat)->GetID());
 #endif
@@ -371,7 +368,6 @@ std::vector<std::string> EnableStaticPlugins()
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theTitleFilter)->GetID());
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&TheFormulaDescriptor)->GetID());
   //plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theFPCount)->GetID());
-  plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theInChIFilter)->GetID());
   // smarts descriptors
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theHBD)->GetID());
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theHBA1)->GetID());
@@ -417,25 +413,16 @@ std::vector<std::string> EnableStaticPlugins()
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theOpReadConformers)->GetID());
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theOpSort)->GetID());
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theOpExtraOut)->GetID());
-#ifdef HAVE_EIGEN
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theOpConformer)->GetID());
-#endif
-#ifdef HAVE_STATIC_INCHI
-  plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theOpUnique)->GetID());
-#endif
 
   // charges
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theGasteigerCharges)->GetID());
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theMMFF94Charges)->GetID());
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theNoCharges)->GetID());
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theFromFileCharges)->GetID());
-#ifdef HAVE_EIGEN
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theQEqCharges)->GetID());
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theQTPIECharges)->GetID());
-#endif
-#ifdef HAVE_EIGEN3
   plugin_ids.push_back(reinterpret_cast<OBPlugin*>(&theEQEqCharges)->GetID());
-#endif
 
   return plugin_ids;
 }

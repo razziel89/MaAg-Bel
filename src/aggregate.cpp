@@ -39,6 +39,11 @@ using namespace std;
 
 namespace OpenBabel
 {
+
+
+   bool IdxSort(OBAtom* i, OBAtom* j){
+       return i->GetIdx() < j->GetIdx();
+   }
     
   /** \class OBAggregate aggregate.h <openbabel/aggregate.h>
       \brief Aggregate Class

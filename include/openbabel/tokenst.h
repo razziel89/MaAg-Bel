@@ -61,11 +61,7 @@ namespace OpenBabel
                                  const std::string& envvar = "BABEL_DATADIR");
 
   // Used by other code for reading files
-#ifdef WIN32
-  #define FILE_SEP_CHAR "\\"
-#else
 #define FILE_SEP_CHAR "/"
-#endif
 
 
 }//namespace

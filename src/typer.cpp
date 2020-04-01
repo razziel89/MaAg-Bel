@@ -25,10 +25,6 @@ GNU General Public License for more details.
 #include "atomtyp.h"
 #include "aromatic.h"
 
-#ifdef WIN32
-#pragma warning (disable : 4786)
-#endif
-
 using namespace std;
 
 namespace OpenBabel

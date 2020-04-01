@@ -500,9 +500,6 @@ public:
   OB_STATIC_PLUGIN(PubChemFormat, thePubChemFormat)
   OB_STATIC_PLUGIN(XMLFormat, theXMLFormat)
 #endif
-#ifdef HAVE_STATIC_INCHI
-  OB_STATIC_PLUGIN(InChIFormat, theInChIFormat)
-#endif
 #ifdef HAVE_REGEX_H
   OB_STATIC_PLUGIN(GAMESSUKInputFormat, theGAMESSUKInputFormat)
   OB_STATIC_PLUGIN(GAMESSUKOutputFormat, theGAMESSUKOutputFormat)
@@ -520,7 +517,6 @@ public:
   OB_STATIC_PLUGIN(TitleFilter, theTitleFilter)
   OB_STATIC_PLUGIN(FormulaDescriptor, TheFormulaDescriptor)
   //OB_STATIC_PLUGIN(FPCount, theFPCount)
-  OB_STATIC_PLUGIN(InChIFilter, theInChIFilter)
   // smarts descriptors
   OB_STATIC_PLUGIN(SmartsDescriptor, theHBD)
   OB_STATIC_PLUGIN(SmartsDescriptor, theHBA1)
@@ -567,25 +563,16 @@ public:
   OB_STATIC_PLUGIN(OpReadConformers, theOpReadConformers)
   OB_STATIC_PLUGIN(OpSort, theOpSort)
   OB_STATIC_PLUGIN(OpExtraOut, theOpExtraOut)
-#ifdef HAVE_STATIC_INCHI
-  OB_STATIC_PLUGIN(OpUnique, theOpUnique)
-#endif
-#ifdef HAVE_EIGEN
   OB_STATIC_PLUGIN(OpConformer, theOpConformer)
-#endif
 
   // charges
   OB_STATIC_PLUGIN(GasteigerCharges, theGasteigerCharges)
   OB_STATIC_PLUGIN(MMFF94Charges, theMMFF94Charges)
   OB_STATIC_PLUGIN(NoCharges, theNoCharges)
   OB_STATIC_PLUGIN(FromFileCharges, theFromFileCharges)
-#ifdef HAVE_EIGEN
   OB_STATIC_PLUGIN(QEqCharges, theQEqCharges)
   OB_STATIC_PLUGIN(QTPIECharges, theQTPIECharges)
-#endif
-#ifdef HAVE_EIGEN3
   OB_STATIC_PLUGIN(EQEqCharges, theEQEqCharges)
-#endif
   OBAPI std::vector<std::string> EnableStaticPlugins();
 
 #endif // USING_DYNAMIC_LIBS

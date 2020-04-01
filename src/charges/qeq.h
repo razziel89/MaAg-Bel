@@ -24,8 +24,6 @@ GNU General Public License for more details.
 
 #include <math.h>
 
-#ifdef HAVE_EIGEN
-
 #include <Eigen/LU>
 #include <Eigen/SVD>
 
@@ -70,5 +68,4 @@ private:
 };
 
 }; //namespace OpenBabel
-#endif //HAVE_EIGEN
 #endif //__QEQ_H__

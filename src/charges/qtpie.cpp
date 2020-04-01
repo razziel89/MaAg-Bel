@@ -16,8 +16,6 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 ***********************************************************************/
 
-#ifdef HAVE_EIGEN
-
 #include "qtpie.h"
 #include <openbabel/locale.h>
 
@@ -355,12 +353,8 @@ double QTPIECharges::OverlapInt(double a, double b, double R)
 bool QTPIECharges::solver(MatrixXd A, VectorXd b, VectorXd &x, const double NormThreshold)
 {
     // using a LU factorization
-#ifdef HAVE_EIGEN3
     bool SolverOK = true;
     x = A.partialPivLu().solve(b);
-#else
-    bool SolverOK = A.lu().solve(b, &x);
-#endif
     //bool SolverOK = A.svd().solve(b, &x);
 
     VectorXd resid = A*x - b;
@@ -378,11 +372,7 @@ bool QTPIECharges::solver(MatrixXd A, VectorXd b, VectorXd &x, const double Norm
 
         obErrorLog.ThrowError(__FUNCTION__, msg.str(), obWarning);
 
-#ifdef HAVE_EIGEN3
         x = A.jacobiSvd().solve(b);
-#else
-        SolverOK = A.svd().solve(b, &x);
-#endif
         resid = A*x - b;
         resnorm = resid.norm();
 
@@ -407,8 +397,6 @@ bool QTPIECharges::solver(MatrixXd A, VectorXd b, VectorXd &x, const double Norm
   }
 
 }//namespace
-
-#endif //HAVE_EIGEN2
 
 //! \file qtpie.cpp
 //! \brief Assign QTPIE partial charges.

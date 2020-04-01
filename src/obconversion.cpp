@@ -19,20 +19,6 @@ GNU General Public License for more details.
 // Definition of OBConversion routines
 #include <openbabel/babelconfig.h>
 
-#ifdef _WIN32
-	#pragma warning (disable : 4786)
-
-	//using 'this' in base class initializer
-	#pragma warning (disable : 4355)
-
-	#ifdef GUI
-		#undef DATADIR
-		#include "stdafx.h" //(includes<windows.h>
-	#endif
-#endif
-
-// #define DONT_CATCH_EXCEPTIONS     // This is useful when debugging an exception
-
 #include <iosfwd>
 #include <fstream>
 #include <sstream>

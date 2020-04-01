@@ -1130,7 +1130,6 @@ namespace OpenBabel {
    * - Read the section above
    * - The MDL format (mdlformat.cpp) is a good example for 2D/3D formats with or
    *   without parity flags.
-   * - The SMILES format (smilesformat.cpp) is a good example for 0D formats.
    *
    * @subsection output Writing files
    *

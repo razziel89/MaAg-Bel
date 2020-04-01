@@ -14,10 +14,6 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 ***********************************************************************/
 #include <openbabel/babelconfig.h>
-#ifdef WIN32
-#pragma warning (disable : 4786)
-#pragma warning (disable : 4251) //
-#endif
 #include <string>
 #include <iomanip>
 #include <openbabel/obmolecformat.h>

@@ -16,18 +16,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 ***********************************************************************/
 
-#ifdef HAVE_EIGEN
-
 #include "qeq.h"
 #include <openbabel/locale.h>
 
 using namespace std;
-
-#if defined(_MSC_VER) && _MSC_VER < 1800
-// Older MSVC doesn't have error function erf, use local implementation
-#include <openbabel/math/erf.h>
-using temperf::erf;
-#endif
 
 namespace OpenBabel
 {
@@ -306,12 +298,8 @@ namespace OpenBabel
   bool QEqCharges::solver(MatrixXd A, VectorXd b, VectorXd &x, const double NormThreshold)
   {
     // using a LU factorization
-#ifdef HAVE_EIGEN3
     bool SolverOK = true;
     x = A.partialPivLu().solve(b);
-#else
-    bool SolverOK = A.lu().solve(b, &x);
-#endif
     //bool SolverOK = A.svd().solve(b, &x);
 
     VectorXd resid = A*x - b;
@@ -329,11 +317,7 @@ namespace OpenBabel
 
         obErrorLog.ThrowError(__FUNCTION__, msg.str(), obWarning);
 
-#ifdef HAVE_EIGEN3
         x = A.jacobiSvd().solve(b);
-#else
-        SolverOK = A.svd().solve(b, &x);
-#endif
         resid = A*x - b;
         resnorm = resid.norm();
 
@@ -358,8 +342,6 @@ namespace OpenBabel
   }
 
 }//namespace
-
-#endif //HAVE_EIGEN2
 
 //! \file qeq.cpp
 //! \brief Assign QEq partial charges.

@@ -17,10 +17,6 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 ***********************************************************************/
 
-#ifdef WIN32
-#pragma warning (disable : 4786)
-#endif
-
 #include <fstream>
 #include <iostream>
 #include <openbabel/babelconfig.h>

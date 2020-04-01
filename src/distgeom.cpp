@@ -17,8 +17,6 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 ***********************************************************************/
 
-#ifdef HAVE_EIGEN
-
 #include <openbabel/distgeom.h>
 #include <openbabel/mol.h>
 #include <openbabel/atom.h>
@@ -1261,5 +1259,3 @@ namespace OpenBabel {
   }
 
 } // end namespace
-
-#endif

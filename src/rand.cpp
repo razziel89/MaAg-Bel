@@ -497,14 +497,6 @@ namespace OpenBabel
 
   void OBRandom::TimeSeed()
   {
-#ifdef WIN32
-    // for VC++ do it this way
-    time_t ltime;
-    time(&ltime);
-    const long secs= long(ltime);
-    x= secs % p;
-    srand( (unsigned)time( NULL ) );
-#else
 
     timeval time;
     gettimeofday(&time,(struct timezone *)NULL);
@@ -512,8 +504,6 @@ namespace OpenBabel
     srand( x );
 #ifdef HAVE_SRANDDEV
     sranddev();
-#endif
-
 #endif
   }
 

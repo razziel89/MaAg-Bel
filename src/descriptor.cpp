@@ -609,7 +609,7 @@ molecule.  They are then visible as properties in SDF and CML formats.
 The IDs in the list can be separated by spaces or commas.
 All Descriptors will provide an output value as a string through a  virtual
 function GetStringValue((OBBase* pOb, string& svalue)) which
-assigns the value of a string descriptor(like inchi) to svalue or a string
+assigns the value of a string descriptor to svalue or a string
 representation of a numerical property like logP.
 
 The classes MWFilter and TitleFilter illustrate the code that has to be

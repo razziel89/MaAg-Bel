@@ -411,7 +411,7 @@ The data can be in chunks of types tEXt, zTXt or, if in any type specified
 with the -aa option. If the first letter of the type is 'z' the data is
 decompressed.
 The keyword in the chunk should be an OpenBabel Format ID, optionally with file added,
-e.g. cml, InChI, molfile.
+e.g. cml, molfile.
 There can be multiple molecules in each chunk, multiple chunks with
 chemical info and multiple png files can be read together.
 
@@ -419,8 +419,8 @@ Writing
 This embeds chemical information into an existing PNG file.
 A PNG file should be the first input file, followed by one or more chemical
 files in any format. Each can contain multiple molecules. Each molecule is output
-in a separate chunk in a format specified by the -xO option. the default with no
-option is InChI. The chunk ID is normally tEXt but can be specified in the -xa option.
+in a separate chunk in a format specified by the -xO option. 
+The chunk ID is normally tEXt but can be specified in the -xa option.
 For example
   babel OrigImg.png Firstmol.smi Secondmol.mol2 OutImg.png -xO "cml" -xa "chEm"
 

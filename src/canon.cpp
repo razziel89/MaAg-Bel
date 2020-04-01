@@ -193,13 +193,11 @@ namespace OpenBabel {
    * in an input file. Although most chemical file formats could be used to
    * store canonical ordered molecules, canonical single line notations are used
    * more often since they allow two canonical molecules to be compared using a
-   * string comparison. Two well known examples are canonical smiles and inchi.
+   * string comparison. Two well known examples are canonical smiles.
    * While the canonical smiles for the same molecule should always be the same
    * when using a specific implementation (i.e. toolkits), these canonical
-   * smiles are usually not transferable between implementations. There is only
-   * one inchi implementation and the canonical code, although not formally
-   * specified is always the same. A typical use case for canonical codes is to
-   * determine if a molecule is already in a database.
+   * smiles are usually not transferable between implementations. A typical use case for
+   * canonical codes is to determine if a molecule is already in a database.
    *
    * The rest of this page documents the OpenBabel canonical coding algorithm.
    *

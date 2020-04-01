@@ -1177,7 +1177,6 @@ namespace OpenBabel
      */
     int FastRotorSearch(bool permute = true);
 
-#ifdef HAVE_EIGEN
     //! \since version 2.4
     int DiverseConfGen(double rmsd, unsigned int nconfs = 0, double energy_gap = 50, bool verbose = false);
     //! \brief Screen a set of conformers in a molecule by their rmsd to get a highly diverse set.
@@ -1188,7 +1187,6 @@ namespace OpenBabel
     //! of decimal places that is used to determine whether conformers are symmetry equivalent. Note that
     //! this relies on the conformers being aligned in some uniform way.
     int ScreenByRMSD(double rmsd, double egap, short prec, OBBitVec hydrogen_mask, bool verbose = false);
-#endif
 
     /////////////////////////////////////////////////////////////////////////
     // Energy Minimization                                                 //

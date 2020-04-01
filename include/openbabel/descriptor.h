@@ -57,7 +57,7 @@ public:
   virtual bool Display(std::string& txt, const char* param, const char* ID=NULL);
 
   /// Comparison of the values of the descriptor. Used in sorting.
-  /// Descriptors may use more complicated ordering than this default (e.g.InChIFilter)
+  /// Descriptors may use more complicated ordering than this default
   virtual bool Order(double p1, double p2){ return p1<p2; }
   virtual bool Order(std::string s1, std::string s2){ return s1<s2; }
 

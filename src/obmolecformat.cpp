@@ -312,7 +312,7 @@ namespace OpenBabel
     - a structure with atoms replaces one with no atoms
     - a structure with bonds replaces one with no bonds,
     provided the formula is the same, else an error.
-    - structures with atoms and bonds are compared by InChI; error if not the same.
+    - structures with atoms and bonds are compared by In-ChI; error if not the same.
     - a structure with 3D coordinates replaces one with 2D coordinates
     - a structure with 2D coordinates replace one with 0D coordinates
 
@@ -351,7 +351,6 @@ namespace OpenBabel
               swap=true;
             else
               {
-                //Compare by inchi; error if different NOT YET IMPLEMENTED
                 //Use the one with the higher dimension
                 if(pSecond->GetDimension() > pFirst->GetDimension())
                   swap=true;

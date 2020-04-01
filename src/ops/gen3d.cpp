@@ -93,13 +93,11 @@ bool OpGen3D::Do(OBBase* pOb, const char* OptionText, OpMap* pOptions, OBConvers
     useDistGeom = true;
   }
 
-#ifdef HAVE_EIGEN
   OBDistanceGeometry dg;
   if (useDistGeom) {
     dg.Setup(*pmol, attemptBuild); // use the bond lengths and angles if we ran the builder
     dg.GetGeometry(*pmol); // ensured to have correct stereo
   }
-#endif
 
   // rule-based builder worked
   pmol->SetDimension(3);

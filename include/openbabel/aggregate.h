@@ -26,9 +26,7 @@ GNU General Public License for more details.
 
 namespace OpenBabel
 {
-   bool IdxSort(OBAtom* i, OBAtom* j){
-       return i->GetIdx() < j->GetIdx();
-   }
+  bool IdxSort(OBAtom* i, OBAtom* j);
 
   //class OBAggregate;
 

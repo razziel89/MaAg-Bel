@@ -1,7 +1,7 @@
 /* src/config.h.in.  Generated from configure.in by autoheader.  */
 
 /* Where the data files are located */
-#define BABEL_DATADIR "/opt/new_prefix/share/openbabel"
+#define BABEL_DATADIR ""
 
 /* The version of Open Babel */
 #define BABEL_VERSION "2.3.90"
@@ -21,10 +21,6 @@
   #define OB_EXPORT __attribute__ ((visibility("default")))
   #define OB_IMPORT __attribute__ ((visibility("default")))
   #define OB_HIDDEN __attribute__ ((visibility("hidden")))
-#elif defined(WIN32) && defined(USING_DYNAMIC_LIBS) && !defined(__MINGW32__)
- #define OB_EXPORT __declspec(dllexport)
- #define OB_IMPORT __declspec(dllimport)
- #define OB_HIDDEN
 #else
  #define OB_EXPORT
  #define OB_IMPORT
@@ -155,28 +151,6 @@
 /* header to be included for shared pointers */
 #define OB_SHARED_PTR_HEADER <memory>
 
-#if defined(WIN32)
- #ifndef HAVE_ISFINITE
-  #define isfinite _finite
-  #define HAVE_ISFINITE 1
- #endif
-
- #ifndef HAVE_SNPRINTF
-  #define snprintf _snprintf
-  #define HAVE_SNPRINTF 1
- #endif
-
- #ifndef HAVE_STRCASECMP
-  #define strcasecmp _stricmp
-  #define HAVE_STRCASECMP 1
- #endif
-
- #ifndef HAVE_STRNCASECMP
-  #define strncasecmp _strnicmp
-  #define HAVE_STRNCASECMP 1
- #endif
-#endif  // WIN32
-
 /* #undef SCANDIR_NEEDS_CONST */
 #ifdef SCANDIR_NEEDS_CONST
  #define SCANDIR_CONST const
@@ -184,7 +158,7 @@
  #define SCANDIR_CONST
 #endif
 
-#define OB_MODULE_PATH "/opt/new_prefix/lib/openbabel/2.3.90"
+#define OB_MODULE_PATH ""
 
 #ifndef TIME_WITH_SYS_TIME
   #ifdef HAVE_SYS_TIME
@@ -198,3 +172,6 @@
   #endif
 #endif
 
+#define HAVE_EIGEN 1
+#define HAVE_EIGEN3 1
+#define USING_DYNAMIC_LIBS 1

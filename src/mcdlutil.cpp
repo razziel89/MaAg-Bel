@@ -26,12 +26,7 @@ GNU General Public License for more details.
 #include <openbabel/stereo/stereo.h>
 #include <openbabel/stereo/cistrans.h>
 
-#ifndef WIN32
 #include <cmath>
-#endif
-#ifdef __MINGW32__
-#include <cmath>
-#endif
 
 using namespace std;
 
@@ -1544,7 +1539,7 @@ namespace OpenBabel {
 
     // Stereo perception should not be triggered if this function is called
     // from MDLFormat::ReadMolecule->Alias::Expand->Alias::FromNameLookup->(MCDL)groupRedraw
-    // as this triggers a failure in the test suite for InChI conversion
+    // as this triggers a failure in the test suite for conversion
     // (specifically the ferrocene).
     bool perceive_stereo = true;
     if (pmol->GetMod() == 1)

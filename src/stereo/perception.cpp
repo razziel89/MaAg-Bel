@@ -2477,14 +2477,14 @@ namespace OpenBabel {
           }
 
           // Handle the case of two planes with a wedge and hash bond opposite each other.
-          // This is handled as in the InChI TechMan (Figure 9) by marking it ambiguous if
+          // This is handled as in the In-ChI TechMan (Figure 9) by marking it ambiguous if
           // the (small) angle between the plane bonds is > 133, and basing the stereo on
           // the 'inner' bond otherwise. This is commonly used for stereo in rings.
-          // See also Get2DTetrahedralAmbiguity() in ichister.c (part of InChI)
+          // See also Get2DTetrahedralAmbiguity() in ichister.c (part of In-ChI)
           if (planeAtoms.size() == 2 && wedgeAtoms.size() == 1) { // Two planes, 1 wedge, 1 hash
             if (order[2] == hashAtoms[0]) { // The wedge and hash are opposite
               double angle = GetAngle(order[1], center, order[3]); // The anticlockwise angle between the plane atoms
-              if (angle > -133 && angle < 133) { // This value is from the InChI TechMan Figure 9
+              if (angle > -133 && angle < 133) { // This value is from the In-ChI TechMan Figure 9
                 if (angle > 0) { // Change to three planes and the hash bond
                   std::rotate(order.begin(), order.begin() + 2, order.end()); // Change the order so that it begins with the hash bond
                   wedge = false;
@@ -2542,7 +2542,7 @@ namespace OpenBabel {
               order.insert(order.begin()+1, nbrs[1]);
 
             // Handle the case of two planes with a wedge/hash in the small angle between them.
-            // This is handled similar to the InChI TechMan (Figure 10) by treating the stereo bond
+            // This is handled similar to the In-ChI TechMan (Figure 10) by treating the stereo bond
             // as being in the large angle. This is consistent with Symyx Draw.
             if (planeAtoms.size() == 2) { // Two planes, 1 stereo
               double angle = GetAngle(order[1], center, order[2]); // The anticlockwise angle between the plane atoms
@@ -2749,7 +2749,7 @@ namespace OpenBabel {
 	  // 4. Prefer neighbor with fewer bonds over neighbor with more bonds
           // 5. Preferably is a terminal H, C, or heteroatom (in that order)
           // 6. If two bonds are overlapping, choose one of these
-          //    (otherwise the InChI code will mark it as ambiguous)
+          //    (otherwise the In-ChI code will mark it as ambiguous)
 
           unsigned int max_bond_score = 0;
           FOR_BONDS_OF_ATOM(b, center) {

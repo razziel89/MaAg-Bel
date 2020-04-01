@@ -1,4 +1,4 @@
-%module openbabel
+%module cpp
 
 %begin %{
 #define SWIG_PYTHON_2_UNICODE

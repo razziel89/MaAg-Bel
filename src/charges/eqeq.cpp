@@ -16,18 +16,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 ***********************************************************************/
 
-#ifdef HAVE_EIGEN3
-
 #include "eqeq.h"
 #include <openbabel/locale.h>
 
 using namespace std;
-
-#if defined(_MSC_VER) && _MSC_VER < 1800
-// Older MSVC doesn't have error function erfc, use local implementation
-#include <openbabel/math/erf.h>
-using temperf::erfc;
-#endif
 
 namespace OpenBabel
 {
@@ -261,8 +253,6 @@ namespace OpenBabel
   }
 
 }//namespace
-
-#endif //HAVE_EIGEN3
 
 //! \file eqeq.cpp
 //! \brief Assign EQEq partial charges.
