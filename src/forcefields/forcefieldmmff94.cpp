@@ -33,7 +33,7 @@ GNU General Public License for more details.
 #include <openbabel/locale.h>
 
 #include <iomanip>
-#include "forcefieldmmff94.h"
+#include "forcefields/forcefieldmmff94.h"
 
 using namespace std;
 

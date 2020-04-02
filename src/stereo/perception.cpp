@@ -30,7 +30,7 @@
 #include <openbabel/oberror.h>
 #include <cassert>
 
-#include "stereoutil.h"
+#include "stereo/stereoutil.h"
 
 #include <cmath>
 #include <limits>

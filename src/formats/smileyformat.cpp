@@ -17,7 +17,7 @@ GNU General Public License for more details.
 #include <openbabel/stereo/tetrahedral.h>
 #include <openbabel/stereo/cistrans.h>
 
-#include "smiley.h"
+#include "formats/smiley.h"
 
 using namespace std;
 

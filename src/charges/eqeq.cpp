@@ -16,7 +16,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 ***********************************************************************/
 
-#include "eqeq.h"
+#include "charges/eqeq.h"
 #include <openbabel/locale.h>
 
 using namespace std;

@@ -20,7 +20,7 @@ GNU General Public License for more details.
 #include <openbabel/mol.h>
 #include <openbabel/locale.h>
 
-#include "forcefieldghemical.h"
+#include "forcefields/forcefieldghemical.h"
 
 using namespace std;
 

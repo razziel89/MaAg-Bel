@@ -16,7 +16,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 ***********************************************************************/
 
-#include "qtpie.h"
+#include "charges/qtpie.h"
 #include <openbabel/locale.h>
 
 using namespace std;

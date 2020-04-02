@@ -39,6 +39,12 @@ class CannotRunCommandError(SetupError):
     pass
 
 
+class DependencyNotFoundError(SetupError):
+    """Raised when a dependency cannot be found"""
+
+    pass
+
+
 # Helper functions
 def call_prog(prog, args, encoding=None, strip=False):
     """Call an executable and return its standard output
@@ -156,16 +162,23 @@ def get_eigen_include_dir():
         A path to the eigen3 include directory if found, None otherwise
     """
     # Allow explicitly setting the eigent include directory
-    eigen_dir = os.environ.get("MAINST_EIGEN3_DIR", None)
-    if eigen_dir is not None:
-        return eigen_dir
+    env_vars = [
+        "MAINST_EIGEN3_DIR",
+    ]
+    for var in env_vars:
+        eigen_dir = os.environ.get(var, None)
+        if eigen_dir is not None:
+            return eigen_dir
 
     # Unless otherwise specified, prefer the conda installation of eigen3. If not found,
     # search the system paths.
-    if os.environ.get("MAINST_EIGEN3_PREFER_SYSTEM", "0") == "1":
-        kinds = ("system", "conda")
-    else:
-        kinds = ("conda", "system")
+    kinds = ("conda", "system")
+    env_vars = [
+        "MAINST_EIGEN3_PREFER_SYSTEM",
+    ]
+    for var in env_vars:
+        if os.environ.get(var, "0") == "1":
+            kinds = ("system", "conda")
     for kind in kinds:
         for d in get_include_dirs(kind):
             content = os.listdir(d)
@@ -300,6 +313,26 @@ def get_ext_modules(basename):
     return ext_modules
 
 
+def check_dependencies():
+    """Check whether all required dependencies can be found. Raise an exception if one
+    is missing.
+    """
+
+    # Check whether SWIG is installed and can be found
+    try:
+        call_prog("swig", ["-version"])
+    except CommandNotFoundError:
+        raise CommandNotFoundError(
+            "Cannot find SWIG and execute, please install it on your system, "
+            "run 'swig --version' to check whether swig works"
+        )
+    # Check whether Eigen3 is installed and can be found
+    if get_eigen_include_dir() is None:
+        raise DependencyNotFoundError(
+            "Cannot find installation of Eigen3, please install it on your system"
+        )
+
+
 def main():
     # Package data
     PACKAGE_DATA = {
@@ -324,13 +357,7 @@ def main():
         ],
     }
 
-    # Check whether SWIG is installed and can be found
-    try:
-        call_prog("swig", ["-version"])
-    except CommandNotFoundError:
-        raise RuntimeError(
-            "Cannot find SWIG and execute, please install on your system"
-        )
+    check_dependencies()
 
     setup(
         ext_modules=get_ext_modules(PACKAGE_DATA["name"]),

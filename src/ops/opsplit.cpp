@@ -20,7 +20,7 @@ GNU General Public License for more details.
 #include <openbabel/op.h>
 #include <openbabel/mol.h>
 #include <fstream>
-#include "deferred.h"
+#include "ops/deferred.h"
 #include <openbabel/descriptor.h>
 
 namespace OpenBabel

@@ -20,7 +20,7 @@ GNU General Public License for more details.
 #include <openbabel/mol.h>
 #include <openbabel/descriptor.h>
 #include <openbabel/obconversion.h>
-#include "deferred.h"
+#include "ops/deferred.h"
 #include <sstream>
 
 using namespace std;

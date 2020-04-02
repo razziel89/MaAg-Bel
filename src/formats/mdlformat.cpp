@@ -31,7 +31,7 @@ GNU General Public License for more details.
 #include <openbabel/tokenst.h>
 #include <openbabel/atomclass.h>
 
-#include "mdlvalence.h"
+#include "formats/mdlvalence.h"
 
 using namespace std;
 namespace OpenBabel

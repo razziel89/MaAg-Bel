@@ -19,7 +19,7 @@
  SCM owns the intellectual property right for this file and reserves the
  right to distribute it under a license other than LGPL
  ****************************************************************************/
-#include "ArrayList.h"
+#include "formats/ArrayList.h"
 
 #include <stdlib.h>
 #include <string.h>

@@ -21,7 +21,7 @@ GNU General Public License for more details.
 #include <openbabel/mol.h>
 #include <openbabel/locale.h>
 
-#include "forcefieldgaff.h"
+#include "forcefields/forcefieldgaff.h"
 
 using namespace std;
 

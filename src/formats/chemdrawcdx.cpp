@@ -20,7 +20,7 @@ GNU General Public License for more details.
 #include <openbabel/tokenst.h>
 #include <openbabel/text.h>
 #include <openbabel/alias.h>
-#include "chemdrawcdx.h"
+#include "formats/chemdrawcdx.h"
 
 #include <iostream>
 #include <fstream>
