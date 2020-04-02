@@ -13,12 +13,14 @@ Most notable changes with respect to the Open Babel base are:
 * one library containing all the functionality instead of multiple ones
 * standalone ops removed
 * eigen3 added as a hard dependency
+* removed cmake as dependency
 * XML and ZLIB functionality removed
 * inchi, smiles and cml formats removed (the latter 2 depend on inchi to some degree)
 * more formats removed:
   * JOSN-based
   * XML-based
 * Windows compatibility removed (use the WSL is you need to use Windows)
+* MacOS compatibility removed
 
 ## More information regarding Open Babel
 
