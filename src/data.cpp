@@ -30,10 +30,6 @@ GNU General Public License for more details.
 #include "resdata.h"
 
 
-#if !HAVE_STRNCASECMP
-extern "C" int strncasecmp(const char *s1, const char *s2, size_t n);
-#endif
-
 using namespace std;
 
 namespace OpenBabel

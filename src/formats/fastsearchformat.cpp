@@ -114,7 +114,6 @@ virtual const char* Description() //required
     FastSearch fs;
     FastSearchIndexer* fsi;
     streampos LastSeekpos; //used during update
-    OBStopwatch sw; //used when preparing index
     int nmols; //number mols in data file
   };
 
@@ -451,7 +450,6 @@ virtual const char* Description() //required
           }
           is->seekg(origpos);
         }
-        sw.Start();
 
         if(update)
           {
@@ -477,15 +475,6 @@ virtual const char* Description() //required
     if(!update || seekpos>LastSeekpos)
     {
       fsi->Add(pOb, seekpos );
-      if(pConv->GetOutputIndex()==400 && nmols>1000)
-      {
-        clog << " Estimated completion time ";
-        double secs = sw.Elapsed() * nmols / 400; //
-        if(secs>150)
-          clog << secs/60 << " minutes" << endl;
-    else
-          clog << secs << " seconds" << endl;
-      }
     }
     else
       //Don't index old objects during update. Don't increment pConv->Index.
@@ -503,11 +492,6 @@ virtual const char* Description() //required
 
         obErrorLog.StartLogging();
 
-        double secs = sw.Elapsed();
-        if(secs>150)
-          clog << "\n It took " << secs/60 << " minutes" << endl;
-        else
-          clog << "\n It took " << secs << " seconds" << endl;
       }
     delete pOb;
     return true;

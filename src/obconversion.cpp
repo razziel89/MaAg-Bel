@@ -35,10 +35,6 @@ GNU General Public License for more details.
 //#include <openbabel/mol.h>
 #include <openbabel/locale.h>
 
-#if !HAVE_STRNCASECMP
-extern "C" int strncasecmp(const char *s1, const char *s2, size_t n);
-#endif
-
 #ifndef BUFF_SIZE
 #define BUFF_SIZE 32768
 #endif

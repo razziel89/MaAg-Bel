@@ -6,13 +6,6 @@
 /* The version of Open Babel */
 #define BABEL_VERSION "2.3.90"
 
-/* Version check macro
-   Can be used like #if (OB_VERSION >= OB_VERSION_CHECK(2, 2, 99)) */
-#define OB_VERSION_CHECK(major, minor, patch) ((major<<16)|(minor<<8)|(patch))
-
-/* OB_VERSION is (major << 16) + (minor << 8) + patch */
-#define OB_VERSION OB_VERSION_CHECK(2, 3, 90)
-
 // If we are using a recent GCC version with visibility support use it
 #ifdef HAVE_GCC_VISIBILITY
   #define OB_EXPORT __attribute__ ((visibility("default")))
@@ -57,27 +50,6 @@
 
 /* have <time.h> */
 #define HAVE_TIME_H 1
-
-/* have <sstream> */
-#define HAVE_SSTREAM 1
-
-/* have symbol clock_t */
-#define HAVE_CLOCK_T 1
-
-/* have symbol rint */
-/* #undef HAVE_RINT */
-
-/* have symbol sranddev */
-/* #undef HAVE_SRANDDEV */
-
-/* have symbol strcasecmp */
-#define HAVE_STRCASECMP 1
-
-/* have symbol strncasecmp */
-#define HAVE_STRNCASECMP 1
-
-/* have struct clock_t */
-#define HAVE_CLOCK_T 1
 
 /* shared pointer implementation to be used */
 #define OB_SHARED_PTR_IMPLEMENTATION std::shared_ptr

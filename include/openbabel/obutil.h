@@ -48,54 +48,6 @@ GNU General Public License for more details.
 namespace OpenBabel
 {
 
-  // class introduction in obutil.cpp
-  class OBAPI OBStopwatch
-  {
-#if HAVE_CLOCK_T
-    clock_t start; //!< the start of timing
-    clock_t stop;  //!< the current time
-#else
-    timeval start; //!< the start of timing
-    timeval stop;  //!< the current time
-#endif
-
-  public:
-#if HAVE_CLOCK_T
-
-    //! Mark the start of "stopwatch" timing
-    void  Start()
-    {
-      start= clock();
-    }
-    //! \return The time since calling OBStopwatch::Start() in seconds.
-    double Lap()
-    {
-      stop= clock();
-      return((stop - start) / (double) CLOCKS_PER_SEC);
-    }
-#else
-    //! Mark the start of "stopwatch" timing
-    void Start()
-    {
-      gettimeofday(&start, NULL);
-    }
-    //! \return The time since calling OBStopwatch::Start() in seconds.
-    double Lap()
-    {
-      gettimeofday(&stop, NULL);
-      return((stop.tv_sec - start.tv_sec)
-             + (stop.tv_usec - start.tv_usec)/1000000.0);
-    }
-#endif
-
-    //! \return The time since calling OBStopwatch::Start() in seconds.
-    double Elapsed()
-    {
-      return(Lap());
-    }
-  };
-
-
   //! \class OBSqrtTbl obutil.h <openbabel/obutil.h>
   //! \brief Square Root lookup table - given a distance squared returns distance
   class OBAPI OBSqrtTbl

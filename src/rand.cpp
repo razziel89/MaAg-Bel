@@ -502,9 +502,6 @@ namespace OpenBabel
     gettimeofday(&time,(struct timezone *)NULL);
     x = (time.tv_usec%p);
     srand( x );
-#ifdef HAVE_SRANDDEV
-    sranddev();
-#endif
   }
 
 } //end namespace OpenBabel

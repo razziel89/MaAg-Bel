@@ -451,7 +451,6 @@ namespace OpenBabel
   - OBBitVec - Efficient bit vector (e.g., for marking visit to atoms)
   - OBMessageHandler - Error and warning handling, filtering, and logging
   - OBRandom - Random number generator
-  - OBStopwatch - Stopwatch class used for timing length of execution
   - OBSqrtTbl - Square Root lookup table - given a distance squared returns distance
 
   Coordinate Manipulation:
