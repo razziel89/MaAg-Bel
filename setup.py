@@ -304,7 +304,7 @@ def main():
     # Package data
     PACKAGE_DATA = {
         "name": "maagbel",
-        "version": 0.1,
+        "version": 0.1.1,
         "description": "Reduced fork of OpenBabel for the ManipulateAggregates tools",
         "author": "Torsten Sachse",
         "mail": "torsten.sachse@gmail.com",
@@ -323,6 +323,14 @@ def main():
             "Programming Language :: Python :: 3 :: Only",
         ],
     }
+
+    # Check whether SWIG is installed and can be found
+    try:
+        call_prog("swig", ["-version"])
+    except CommandNotFoundError:
+        raise RuntimeError(
+            "Cannot find SWIG and execute, please install on your system"
+        )
 
     setup(
         ext_modules=get_ext_modules(PACKAGE_DATA["name"]),
