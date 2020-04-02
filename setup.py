@@ -311,6 +311,17 @@ def main():
         "url": "https://github.com/razziel89/MaAg-bel",
         "long_description": get_long_description(),
         "long_description_content_type": "text/markdown",
+        "classifiers": [
+            "Development Status :: 4 - Beta",
+            "Intended Audience :: Developers",
+            "Intended Audience :: Science/Research",
+            "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+            "Natural Language :: English",
+            "Operating System :: POSIX :: Linux",
+            "Programming Language :: C++",
+            "Programming Language :: Python :: 3.8",
+            "Programming Language :: Python :: 3 :: Only",
+        ],
     }
 
     setup(
