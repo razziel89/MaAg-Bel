@@ -22,6 +22,12 @@ Most notable changes with respect to the Open Babel base are:
 * Windows compatibility removed (use the WSL is you need to use Windows)
 * MacOS compatibility removed
 
+## Installation
+
+Make sure that eigen version 3 is installed. Afterwards, run `pip install maagbel`. If
+you are using conda, run `conda install eigen` to install it. Most likely, you want to
+install this as a dependency of ManipulateAggregates.
+
 ## More information regarding Open Babel
 
 Open Babel is a chemical toolbox designed to speak the many languages
