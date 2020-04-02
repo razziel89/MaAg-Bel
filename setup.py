@@ -304,7 +304,7 @@ def main():
     # Package data
     PACKAGE_DATA = {
         "name": "maagbel",
-        "version": 0.1.1,
+        "version": "0.1.1",
         "description": "Reduced fork of OpenBabel for the ManipulateAggregates tools",
         "author": "Torsten Sachse",
         "mail": "torsten.sachse@gmail.com",
