@@ -57,13 +57,6 @@
 /* header to be included for shared pointers */
 #define OB_SHARED_PTR_HEADER <memory>
 
-/* #undef SCANDIR_NEEDS_CONST */
-#ifdef SCANDIR_NEEDS_CONST
- #define SCANDIR_CONST const
-#else
- #define SCANDIR_CONST
-#endif
-
 #ifndef TIME_WITH_SYS_TIME
   #ifdef HAVE_SYS_TIME
     #ifdef HAVE_TIME
