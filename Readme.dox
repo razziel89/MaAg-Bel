@@ -1,0 +1,15 @@
+/**
+\mainpage   Overview over MaAg-bel
+
+\section    Introduction
+
+What you are currently viewing contains the C++ documentation for
+MaAg-bel, a reduced fork of the OpenBabel chemical toolbox designed
+to work with the ManipulateAggregates set of tools. This package is
+meant to be only used from Python.
+
+\author     Torsten Sachse
+\date       2020
+\version    0.1
+\copyright  GNU General Public License version 2
+*/
