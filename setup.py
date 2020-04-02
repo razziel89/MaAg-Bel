@@ -161,7 +161,7 @@ def get_eigen_include_dir():
     Returns:
         A path to the eigen3 include directory if found, None otherwise
     """
-    # Allow explicitly setting the eigent include directory
+    # Allow explicitly setting the eigen include directory
     env_vars = [
         "MAINST_EIGEN3_DIR",
     ]
