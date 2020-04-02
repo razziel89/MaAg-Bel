@@ -172,7 +172,7 @@ def get_eigen_include_dir():
             for c in content:
                 if c == "eigen3" and os.path.isdir(d):
                     return os.path.join(d, c)
-    
+
     return None
 
 
@@ -317,7 +317,7 @@ def main():
         ext_modules=get_ext_modules(PACKAGE_DATA["name"]),
         packages=find_packages(),
         cmdclass={"build": build},
-        package_data={'': [PACKAGE_DATA["name"]+'/data']},
+        package_data={"": [PACKAGE_DATA["name"] + "/data"]},
         **PACKAGE_DATA,
     )
 
