@@ -67,9 +67,6 @@
 /* have symbol rint */
 /* #undef HAVE_RINT */
 
-/* have symbol snprintf */
-#define HAVE_SNPRINTF 1
-
 /* have symbol sranddev */
 /* #undef HAVE_SRANDDEV */
 
