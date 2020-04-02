@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['todo_20list',['Todo List',['../todo.html',1,'']]]
+  ['substructure_20search',['Substructure Search',['../group__substructure.html',1,'']]]
 ];

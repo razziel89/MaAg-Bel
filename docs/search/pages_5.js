@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['plugins',['Plugins',['../group__plugins.html',1,'']]]
+  ['overview_20over_20maag_2dbel',['Overview over MaAg-bel',['../index.html',1,'']]]
 ];
