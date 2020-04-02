@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['unit',['Unit',['../classOpenBabel_1_1OBAtomHOF.html#a172a1132fa02fdc105a68b8c139dc447',1,'OpenBabel::OBAtomHOF']]],
+  ['unsetaromatic',['UnsetAromatic',['../classOpenBabel_1_1OBAtom.html#aeb113d29b5d49316a5ab2b020a8fee9d',1,'OpenBabel::OBAtom::UnsetAromatic()'],['../classOpenBabel_1_1OBBond.html#a515f0fed27416acf06e254eccb453d02',1,'OpenBabel::OBBond::UnsetAromatic()']]],
+  ['unsetdown',['UnsetDown',['../classOpenBabel_1_1OBBond.html#aad6058761e3a28fc66c9e7f9891faab1',1,'OpenBabel::OBBond']]],
+  ['unsetfixatom',['UnsetFixAtom',['../classOpenBabel_1_1OBForceField.html#a856b1f3fbec1e93ab4b89cbeefe2ef64',1,'OpenBabel::OBForceField']]],
+  ['unsetflag',['UnsetFlag',['../classOpenBabel_1_1OBBond.html#a49602958ea880c26c75cae470a4e08df',1,'OpenBabel::OBBond']]],
+  ['unsethash',['UnsetHash',['../classOpenBabel_1_1OBBond.html#a47398f804b089470bea627c7815f1770',1,'OpenBabel::OBBond']]],
+  ['unsetignoreatom',['UnsetIgnoreAtom',['../classOpenBabel_1_1OBForceField.html#a5b31de555e7783b33216262580ab1e79',1,'OpenBabel::OBForceField']]],
+  ['unsetkekule',['UnsetKekule',['../classOpenBabel_1_1OBBond.html#a6a2449255293ca95690ca7dbb1a0aea9',1,'OpenBabel::OBBond']]],
+  ['unsetlssrperceived',['UnsetLSSRPerceived',['../classOpenBabel_1_1OBMol.html#a2a2ddc8bad11e180da9e7df9ca62a09a',1,'OpenBabel::OBMol']]],
+  ['unsetstereo',['UnsetStereo',['../classOpenBabel_1_1OBAtom.html#a0fdd73d156a60e46037a37d248ad8b14',1,'OpenBabel::OBAtom']]],
+  ['unsetup',['UnsetUp',['../classOpenBabel_1_1OBBond.html#a533394b203901faf0bb30e35d542cd1a',1,'OpenBabel::OBBond']]],
+  ['unsetwedge',['UnsetWedge',['../classOpenBabel_1_1OBBond.html#a7ac638ef3bcf4c602d415401cdd4c8c1',1,'OpenBabel::OBBond']]],
+  ['updateconformers',['UpdateConformers',['../classOpenBabel_1_1OBForceField.html#a79e9b021ba43cd4532d4e6bf6687c447',1,'OpenBabel::OBForceField']]],
+  ['updatecoordinates',['UpdateCoordinates',['../classOpenBabel_1_1OBForceField.html#a3e34cf528963eb9502a78a1e19ae4b82',1,'OpenBabel::OBForceField']]],
+  ['updatecoords',['UpdateCoords',['../classOpenBabel_1_1OBAlign.html#a4ee9ad1ff30b53685020419f0437cd37',1,'OpenBabel::OBAlign']]],
+  ['updatemcr',['UpdateMcr',['../structOpenBabel_1_1CanonicalLabelsImpl.html#a8d9fc8ed18592e5c7957a9904072cb1c',1,'OpenBabel::CanonicalLabelsImpl']]],
+  ['updatepairssimple',['UpdatePairsSimple',['../classOpenBabel_1_1OBForceField.html#a3d03c4c266a2f4fee364384f256942fb',1,'OpenBabel::OBForceField']]]
+];

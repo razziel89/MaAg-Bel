@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['m_5fquery',['m_query',['../classOpenBabel_1_1OBIsomorphismMapper.html#afb5324790e09771b1aed600cd5c41be0',1,'OpenBabel::OBIsomorphismMapper']]],
+  ['m_5ftimeout',['m_timeout',['../classOpenBabel_1_1OBIsomorphismMapper.html#aaf2e9b06ea91eb61525e0ed3a62f2957',1,'OpenBabel::OBIsomorphismMapper']]],
+  ['mcoordcart',['mCoordCart',['../structOpenBabel_1_1CIFData_1_1CIFAtom.html#a33ab496d064b18ae0524aedab5f6cbf9',1,'OpenBabel::CIFData::CIFAtom']]],
+  ['mcoordfrac',['mCoordFrac',['../structOpenBabel_1_1CIFData_1_1CIFAtom.html#ac3fed9493f6d23e457e87052afdf773f',1,'OpenBabel::CIFData::CIFAtom']]],
+  ['mdatablockname',['mDataBlockName',['../classOpenBabel_1_1CIFData.html#a617e0378034a66e1b405f85e98440c5d',1,'OpenBabel::CIFData']]],
+  ['mdistance',['mDistance',['../structOpenBabel_1_1CIFData_1_1CIFBond.html#a2debfad61a0c0b7119846928a4d36226',1,'OpenBabel::CIFData::CIFBond']]],
+  ['mformula',['mFormula',['../classOpenBabel_1_1CIFData.html#ad3eba25f6c963035d310c2dc67e316e4',1,'OpenBabel::CIFData']]],
+  ['mlabel',['mLabel',['../structOpenBabel_1_1CIFData_1_1CIFAtom.html#afeec5e58010464890f4c59c21e2f2825',1,'OpenBabel::CIFData::CIFAtom']]],
+  ['mlabel1',['mLabel1',['../structOpenBabel_1_1CIFData_1_1CIFBond.html#a5ae64b899f86759b8ecd3a687302b63d',1,'OpenBabel::CIFData::CIFBond']]],
+  ['mname',['mName',['../classOpenBabel_1_1CIFData.html#a117f31c3797dc7f635cb1ed65e7efd26',1,'OpenBabel::CIFData']]],
+  ['moccupancy',['mOccupancy',['../structOpenBabel_1_1CIFData_1_1CIFAtom.html#a320667b0201dd549288a96e11765a643',1,'OpenBabel::CIFData::CIFAtom']]],
+  ['morthmatrix',['mOrthMatrix',['../classOpenBabel_1_1CIFData.html#aa0093b236fbf2c7ffbe3b9e64df47351',1,'OpenBabel::CIFData']]],
+  ['morthmatrixinvert',['mOrthMatrixInvert',['../classOpenBabel_1_1CIFData.html#a38e036e57947ba8f1802796ea7ce719a',1,'OpenBabel::CIFData']]],
+  ['mspacegrouphermannmauguin',['mSpacegroupHermannMauguin',['../classOpenBabel_1_1CIFData.html#a1c76ac603b3e42d60b7f1a830fc2ce78',1,'OpenBabel::CIFData']]],
+  ['mspacegroupnumberit',['mSpacegroupNumberIT',['../classOpenBabel_1_1CIFData.html#a9843498eced543048cfbd6970e22543f',1,'OpenBabel::CIFData']]],
+  ['mspacegroupsymbolhall',['mSpacegroupSymbolHall',['../classOpenBabel_1_1CIFData.html#a914cbfc167a161e97b0b006ed3ee337a',1,'OpenBabel::CIFData']]],
+  ['msymbol',['mSymbol',['../structOpenBabel_1_1CIFData_1_1CIFAtom.html#a63dcfe1fc6051bd39cdbb0c2617df4bb',1,'OpenBabel::CIFData::CIFAtom']]],
+  ['mvatom',['mvAtom',['../classOpenBabel_1_1CIFData.html#ab58b19e1774809fc4f5e53230dada767',1,'OpenBabel::CIFData']]],
+  ['mvbond',['mvBond',['../classOpenBabel_1_1CIFData.html#ac9168e1b2700d1a698275bf382f168df',1,'OpenBabel::CIFData']]],
+  ['mvcomment',['mvComment',['../classOpenBabel_1_1CIFData.html#a76a7836d1e3ab09fa9e7ff06a7a07ccf',1,'OpenBabel::CIFData::mvComment()'],['../classOpenBabel_1_1CIF.html#aa614082f8b0b800bc73d6a07ef811042',1,'OpenBabel::CIF::mvComment()']]],
+  ['mvdata',['mvData',['../classOpenBabel_1_1CIF.html#a49399e5ed316724e397425ec5c5c6b69',1,'OpenBabel::CIF']]],
+  ['mvitem',['mvItem',['../classOpenBabel_1_1CIFData.html#a03d5d5fb002b2a7626b4b0d86f10197f',1,'OpenBabel::CIFData']]],
+  ['mvlatticepar',['mvLatticePar',['../classOpenBabel_1_1CIFData.html#acdfaf0dd9e75b274c5a9837b1f8b1dd9',1,'OpenBabel::CIFData']]],
+  ['mvloop',['mvLoop',['../classOpenBabel_1_1CIFData.html#afd92f87e56c7002b5e5b21edefaef3d1',1,'OpenBabel::CIFData']]]
+];
