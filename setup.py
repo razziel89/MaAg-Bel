@@ -337,7 +337,7 @@ def main():
     # Package data
     PACKAGE_DATA = {
         "name": "maagbel",
-        "version": "0.1.1",
+        "version": "0.1.2",
         "description": "Reduced fork of OpenBabel for the ManipulateAggregates tools",
         "author": "Torsten Sachse",
         "mail": "torsten.sachse@gmail.com",
@@ -363,7 +363,7 @@ def main():
         ext_modules=get_ext_modules(PACKAGE_DATA["name"]),
         packages=find_packages(),
         cmdclass={"build": build},
-        package_data={"": [PACKAGE_DATA["name"] + "/data"]},
+        package_data={PACKAGE_DATA["name"]: ["data/*"]},
         **PACKAGE_DATA,
     )
 
