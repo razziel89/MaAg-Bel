@@ -1,3 +1,11 @@
+# Note
+
+This repository is no longer being actively maintained.
+I would be happy for someone else to continue development, please reach out if
+you are interested and want to have a chat.
+As it stands, I do not have a concrete use for the code in this repository
+anymore, which is why it has been archived.
+
 # MaAg-bel
 
 This is MaAg-bel, a reduced fork of the Open Babel chemical toolbox desiged to work with
